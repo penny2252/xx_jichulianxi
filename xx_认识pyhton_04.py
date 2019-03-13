@@ -34,7 +34,7 @@ def inputname():
     return name
 
 
-pw = {'xiaoxiao': '13982121', 'pan': '883618'}
+
 
 
 def login():
@@ -44,5 +44,5 @@ def login():
         if pw_name == pw[name]:
             break
 
-
+pw = {'xiaoxiao': '13982121', 'pan': '883618'}
 login()
