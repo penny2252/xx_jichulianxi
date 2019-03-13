@@ -18,30 +18,31 @@ def inputqq(name):
     #     print('qq错误次数超过5次，请重新输入姓名')
     #     inputname()
     pw_name = input('请输入qq号')
-    n=1
-    while pw_name != pw[name]:
-
+    if pw_name == pw[name]:
+        print('亲爱的%s，欢迎登陆 爱学习管理系统' % name)
+    else:
         print('qq错误，请重新输入')
-        pw_name = input('请输入qq号')
-        n += 1
-        if n == 5:
-            print('qq错误次数超过5次，请重新输入姓名')
-            inputname()
 
-    print('亲爱的%s，欢迎登陆 爱学习管理系统' % name)
-    # break
+    return pw_name
+
 
 def inputname():
     name = input('请输入姓名:')
     if name not in pw.keys():
         print('尚未注册，请重新输入')
         inputname()
-    else:
-
-        inputqq(name)
+    return name
 
 
+pw = {'xiaoxiao': '13982121', 'pan': '883618'}
 
-pw = {'xiaoxiao':'13982121','pan':'883618'}
 
-name=inputname()
+def login():
+    name = inputname()
+    for i in range(5):
+        pw_name = inputqq(name)
+        if pw_name == pw[name]:
+            break
+
+
+login()
