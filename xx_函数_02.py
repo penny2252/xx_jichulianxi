@@ -5,7 +5,7 @@
 
 def add():
     print('2.删除名片\n3.修改名片\n4.查询名片\n5.退出系统')
-    action = input('请输入操作')
+    action = input('请输入1操作')
     if action == '2':
         delet()
     elif action == '3':
