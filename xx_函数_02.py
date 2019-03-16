@@ -6,14 +6,30 @@
 
 student_list=[]
 
+def print_list():
+    print('\n')
+    print('*' * 50)
+    if student_list==[]:
+        print('没有名片信息，请选择添加名片')
+    else:
+        print('系统中有%d 名学生信息'%(len(student_list)))
+        print('-' * 30)
+        print('序号\t姓名\t年龄\t学号')
+        for i in range(len(student_list)):
+            print('%d\t%s\t%s\t%s'%(i+1,student_list[i][0],student_list[i][1],student_list[i][2]))
+
 def add():
-    print('1.input\n2.return uo\n5.退出系统')
-    action = input('请输入caozuo:1.input2.return up5.exit')
+    print('\n')
+    print('*' * 50)
+    print('添加名片')
+    print('1.添加名片\n2.返回\n5.退出系统')
+    print('*' * 50)
+    action = input('请输入操作:1.添加名片2.返回5.退出系统')
     if action == '1':
-        print('qingyicishuruxinxi')
-        name=input('inputname:')
-        age_num=input('inputage')
-        number=input('inputnumber')
+        print('请输入信息')
+        name=input('请输入姓名:')
+        age_num=input('请输入年龄：')
+        number=input('请输入学号：')
     elif action=='2':
         hello()
     elif action == '5':
@@ -21,35 +37,39 @@ def add():
     else:
         raise Exception('输入错误，请重新输入')
     student=[name,age_num,number]
-    print(student)
     student_list.append(student)
-    print(student_list)
     hello()
 
 def delet():
-    print('1.添加名片\n3.修改名片\n4.查询名片\n5.退出系统')
-    action = input('请输入操作')
+    print('\n')
+    print('*' * 50)
+    action = input('请输入操作：1.选择删除名片序号2返回5.退出系统')
     if action == '1':
-        add()
-    elif action == '3':
-        change()
-    elif action == '4':
-        show()
+        edit_num = int(input('请输入想要删除名片的序号'))
+        student_list.pop(edit_num-1)
+        print('修改完成')
+        hello()
+    elif action == '2':
+        hello()
     elif action == '5':
         print('再见')
     else:
         raise Exception('输入错误，请重新输入')
 
 
-def change():
-    print('1.添加名片\n2.删除名片\n4.查询名片\n5.退出系统')
-    action = input('请输入操作')
+def edit():
+    print('\n')
+    print('*' * 50)
+    action = input('请输入操作：1.选择修改名片序号2返回5.退出系统')
     if action == '1':
-        add()
+        edit_num=int(input('请输入想要修改名片的序号'))
+        student_list[edit_num-1][0]=input('请输入姓名：')
+        student_list[edit_num-1][1]=input('请输入年龄：')
+        student_list[edit_num-1][2]=input('请输入学号：')
+        print('修改完成')
+        hello()
     elif action == '2':
-        delet()
-    elif action == '4':
-        show()
+        hello()
     elif action == '5':
         print('再见')
     else:
@@ -58,14 +78,15 @@ def change():
 
 
 def show():
-    print('1.添加名片\n2.删除名片\n3.修改名片\n5.退出系统')
-    action = input('请输入操作')
+    print_list()
+    print('*' * 50)
+    action = input('请输入操作：1.添加名片2.删除名片3.修改名片5.退出系统')
     if action == '1':
         add()
     elif action == '2':
         delet()
     elif action == '3':
-        change()
+        edit()
     elif action == '5':
         print('再见')
     else:
@@ -73,24 +94,28 @@ def show():
 
 
 def hello():
+    print('*'*50)
+    print('欢迎使用名片管理系统')
     print('1.添加名片\n2.删除名片\n3.修改名片\n4.查询名片\n5.退出系统')
-    action = input('请输入操作')
+    print('*' * 50)
+    action = input('请输入操作：1.添加名片2.删除名片3.修改名片4.查询名片5.退出系统')
     if action == '1':
         add()
     elif action == '2':
         delet()
     elif action == '3':
-        change()
+        edit()
     elif action == '4':
         show()
     elif action == '5':
         print('再见')
     else:
         raise Exception('输入错误，请重新输入')
-        hello()
+
 
 
 try:
     hello()
 except Exception as result:
     print(result)
+    hello()
