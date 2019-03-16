@@ -2,6 +2,7 @@
 # 输入文件的名字,然后程序自动完成对文件进行备份
 file_name=input('请输入要复制的文件名')
 file_newlist=file_name.split('.')
+
 file_newname=file_newlist[0]+'复制.'+file_newlist[1]
 
 file_old=open(file_name,'r')
