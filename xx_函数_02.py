@@ -3,9 +3,12 @@
 # 学⽣信息⾄少包含：姓名、年龄、学号，除此以外可以适当添加
 # 必须完成的功能：添加、删除、修改、查询、退出
 
+
+student_list=[]
+
 def add():
     print('2.删除名片\n3.修改名片\n4.查询名片\n5.退出系统')
-    action = input('请输入1操作')
+    action = input('请输入1操作[]’)
     if action == '2':
         delet()
     elif action == '3':
