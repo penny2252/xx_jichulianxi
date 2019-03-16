@@ -7,21 +7,24 @@
 student_list=[]
 
 def add():
-    print('2.删除名片\n3.修改名片\n4.查询名片\n5.退出系统')
-    action = input('请输入caozuo:1.name2.age3.number5.exit')
+    print('1.input\n2.return uo\n5.退出系统')
+    action = input('请输入caozuo:1.input2.return up5.exit')
     if action == '1':
+        print('qingyicishuruxinxi')
         name=input('inputname:')
-    elif action == '2':
-        age=input('inputage')
-    elif action == '3':
-        numer=input('inputnumber')
+        age_num=input('inputage')
+        number=input('inputnumber')
+    elif action=='2':
+        hello()
     elif action == '5':
         print('再见')
     else:
         raise Exception('输入错误，请重新输入')
-    student=[name,age,number]
+    student=[name,age_num,number]
     print(student)
     student_list.append(student)
+    print(student_list)
+    hello()
 
 def delet():
     print('1.添加名片\n3.修改名片\n4.查询名片\n5.退出系统')
