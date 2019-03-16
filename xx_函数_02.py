@@ -20,7 +20,8 @@ def add():
     else:
         raise Exception('输入错误，请重新输入')
     student=[name,age,number]
-    
+    print(student)
+    student_list.append(student)
 
 def delet():
     print('1.添加名片\n3.修改名片\n4.查询名片\n5.退出系统')
@@ -50,6 +51,7 @@ def change():
         print('再见')
     else:
         raise Exception('输入错误，请重新输入')
+
 
 
 def show():
